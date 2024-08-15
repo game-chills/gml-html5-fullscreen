@@ -22,13 +22,13 @@
   "name":"test",
   "resources":[
     {"id":{"name":"e_module_html_fullscreen","path":"extensions/e_module_html_fullscreen/e_module_html_fullscreen.yy",},},
-    {"id":{"name":"Object1","path":"objects/Object1/Object1.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"o_test","path":"objects/o_test/o_test.yy",},},
+    {"id":{"name":"room_test","path":"rooms/room_test/room_test.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"room_test","path":"rooms/room_test/room_test.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
