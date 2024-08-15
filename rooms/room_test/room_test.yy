@@ -17,8 +17,8 @@
   ],
   "name":"room_test",
   "parent":{
-    "name":"test",
-    "path":"test.yyp",
+    "name":"html5_fullscreen",
+    "path":"html5_fullscreen.yyp",
   },
   "parentRoom":null,
   "physicsSettings":{

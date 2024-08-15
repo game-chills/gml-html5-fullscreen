@@ -1,6 +1,6 @@
 {
   "$GMProject":"",
-  "%Name":"test",
+  "%Name":"html5_fullscreen",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -19,7 +19,7 @@
   "MetaData":{
     "IDEVersion":"2024.6.2.162",
   },
-  "name":"test",
+  "name":"html5_fullscreen",
   "resources":[
     {"id":{"name":"e_module_html_fullscreen","path":"extensions/e_module_html_fullscreen/e_module_html_fullscreen.yy",},},
     {"id":{"name":"o_test","path":"objects/o_test/o_test.yy",},},

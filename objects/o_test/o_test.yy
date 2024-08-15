@@ -11,8 +11,8 @@
   "name":"o_test",
   "overriddenProperties":[],
   "parent":{
-    "name":"test",
-    "path":"test.yyp",
+    "name":"html5_fullscreen",
+    "path":"html5_fullscreen.yyp",
   },
   "parentObjectId":null,
   "persistent":false,
