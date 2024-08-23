@@ -51,3 +51,4 @@ _use this_
 `html_fullscreen_mouse_gui_x()` - ..   
 `html_fullscreen_mouse_gui_y()` - ..   
 
+_I tested this in google and yandex browser on mobile (android) and desktop (windows)_
