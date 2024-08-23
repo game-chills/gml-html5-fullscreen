@@ -23,7 +23,7 @@ _this method can return the same object_
 
 `html_fullscreen_touches()` - analog html_fullscreen_touches_raw, return copy object 
 _use this_  
--Touch Object:
+* Touch Object:
 ```js
 {
   // from js
