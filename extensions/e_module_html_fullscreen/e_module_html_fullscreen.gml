@@ -22,10 +22,6 @@
         preventDefaultMobileTouch: 1,
     });
 
-    e_gms_module_html_fullscreen_set_active_mouse_position({
-        setActiveMousePosition: 1,
-    });
-
     e_gms_module_html_fullscreen_set_active_touches({
         setActiveTouches: 1,
     });
@@ -79,91 +75,6 @@
         width: _width,
         height: _height,
     }
-}
-
-#define html_fullscreen_mouse_pos_raw
-{
-    var _memory = (function() {
-        static _memory = {
-            now: -1,
-            xcf: 0, 
-            ycf: 0,
-            win_x: 0,
-            win_y: 0,
-            gui_x: 0,
-            gui_y: 0,
-        };
-        return _memory;
-    })()
-
-    if (!html_fullscreen_extension_available()) {
-        return _memory;
-    }
-
-    var _now = e_gms_module_html_fullscreen_get_mouse_position_now();
-    if (_now == _memory.now) {
-        return _memory;
-    }
-
-    var _json_string =
-        e_gms_module_html_fullscreen_get_mouse_position();
-    
-    var _json = json_parse(_json_string);
-    
-    _memory.now = _now;
-
-    _memory.xcf = _json.xcf;
-    _memory.ycf = _json.ycf;
-
-    _memory.win_x = window_get_width() * _json.xcf;
-    _memory.win_y = window_get_width() * _json.ycf;
-    _memory.gui_x = display_get_gui_width() * _json.xcf;
-    _memory.gui_y = display_get_gui_height() * _json.ycf;
-
-    return _memory;
-}
-
-#define html_fullscreen_mouse_pos
-{
-    var _memory = html_fullscreen_mouse_pos_raw();
-    return {
-        xcf: _memory.xcf, 
-        ycf: _memory.ycf,
-        win_x: _memory.win_x,
-        win_y: _memory.win_y,
-        gui_x: _memory.gui_x,
-        gui_y: _memory.gui_y,
-    }
-}
-
-#define html_fullscreen_mouse_pos_xcf
-{
-    return html_fullscreen_mouse_pos_raw().xcf;
-}
-
-#define html_fullscreen_mouse_pos_ycf
-{
-    return html_fullscreen_mouse_pos_raw().ycf;
-}
-
-#define html_fullscreen_mouse_pos_win_x
-{
-    return html_fullscreen_mouse_pos_raw().win_x;
-}
-
-#define html_fullscreen_mouse_pos_win_y
-{
-    return html_fullscreen_mouse_pos_raw().win_y;
-}
-
-#define html_fullscreen_mouse_pos_gui_x
-{
-    return html_fullscreen_mouse_pos_raw().gui_x;
-}
-
-#define html_fullscreen_mouse_pos_gui_y
-{
-    return html_fullscreen_mouse_pos_raw().gui_y;
 }
 
 #define html_fullscreen_touches_raw
@@ -250,4 +161,42 @@
 {
     var _memory = html_fullscreen_touches_raw();
     return array_length(_memory.touches);
+}
+
+#define html_fullscreen_mouse_xcf
+{
+    if (os_browser == browser_not_a_browser) {
+        return window_mouse_get_x() / window_get_width();
+    }
+
+    return window_mouse_get_x() / browser_width;
+}
+
+#define html_fullscreen_mouse_ycf
+{
+    if (os_browser == browser_not_a_browser) {
+        return window_mouse_get_y() / window_get_height();
+    }
+
+    return window_mouse_get_y() / browser_height;
+}
+
+#define html_fullscreen_mouse_win_x
+{
+    return html_fullscreen_mouse_xcf() * window_get_width();
+}
+
+#define html_fullscreen_mouse_win_y
+{
+    return html_fullscreen_mouse_ycf() * window_get_height();
+}
+
+#define html_fullscreen_mouse_gui_x
+{
+    return html_fullscreen_mouse_xcf() * display_get_gui_width();
+}
+
+#define html_fullscreen_mouse_gui_y
+{
+    return html_fullscreen_mouse_ycf() * display_get_gui_height();
 }

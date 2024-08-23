@@ -1,7 +1,6 @@
-
 draw_circle(
-	html_fullscreen_mouse_pos_gui_x(),
-	html_fullscreen_mouse_pos_gui_y(),
+	html_fullscreen_mouse_gui_x(),
+	html_fullscreen_mouse_gui_y(),
 	32,
 	false,
 );
